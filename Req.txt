@@ -23,3 +23,9 @@
 "message".Log(Log.Type.Error, Log.Level.Middle);
 "message".LogError(Log.Level.Middle);
 "message".LogErrorMiddle();
+
+-----------------------------------------------------
+4. 
+Журналирование с локализацией
+
+"сообщение".Loc().Log()
