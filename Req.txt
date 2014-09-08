@@ -35,3 +35,16 @@
 Указание источника
 
 "message".Log(Log.Destination.Primary);
+
+
+-----------------------------------------------------
+6. Блочность с использованием using
+
+using(var calc = new Log.Block("Name", "Label", Log.Destination.Primary))
+{
+    "message1".Log(calc);
+    
+    //...
+    
+    "message2 {0}".Set(20).Log(calc);
+}
