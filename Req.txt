@@ -48,3 +48,25 @@ using(var calc = new Log.Block("Name", "Label", Log.Destination.Primary))
     
     "message2 {0}".Set(20).Log(calc);
 }
+
+-----------------------------------------------------
+7. Блочность с использованием IDisposable
+
+class A : IDisposable
+{
+    Log.Block Calculate = new Log.Block(...);
+    
+    public A()
+    {
+        Calculate.ID = Guid.NewGuid();
+        
+        "Объект {0} создан".Set(GetType()).Loc().Log();
+    }
+    
+    public void Dispose()
+    {
+        "Объект удалён".Log();
+    
+        Calculate.Dispouse();
+    }
+}
