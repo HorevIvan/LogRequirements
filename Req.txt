@@ -60,12 +60,12 @@ class A : IDisposable
     {
         Calculate.ID = Guid.NewGuid();
         
-        "Объект {0} создан".Set(GetType()).Loc().Log();
+        "Объект {0} создан".Set(GetType()).Loc().Log(Calculate);
     }
     
     public void Dispose()
     {
-        "Объект удалён".Log();
+        "Объект удалён".Log(Calculate);
     
         Calculate.Dispouse();
     }
